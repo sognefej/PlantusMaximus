@@ -1,32 +1,27 @@
 # PlantusMaximus
 Plant more better!
 
+## Features
+Plant and till configurable areas to make life easier. Pairs well with [DiggusMaximus](https://www.curseforge.com/minecraft/mc-mods/diggus-maximus).
 
-## Project goals 
-Recognize plantable area for all type of farmable material in minecraft
 
-Automatically plant seeds from inventory based on farm-tile detection.
+**Currently in Alpha!**
 
-1.15 Version planned.
-1.16 Version planned.
-
-Items not included form the 1.16 snapshot. TBD. 
-
+## Supported Items and Blocks
 - Wheat
 - Carrot
 - Potato
 - Beetroot
-
+- Sweet berries
 - Pumpkin 
 - Melon
- 
 - Cactus 
-- Vine
 - Kelp 
 - Tree
- 
-- cocoa beans
+- Cocoa beans
 - Mushroom
 - Nether wart
 - Sugar Cane 
 - Chorus Fruit 
+- Bone meal
+- All Hoes

@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "net.sognefej.plantusmaximus.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "PlayerEntityMixin",
+    "CancelDurabilityMixin"
+  ],
+  "client": [
+    "MinecraftClientMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

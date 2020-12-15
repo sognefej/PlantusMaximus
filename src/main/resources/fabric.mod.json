@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "plantusmaximus",
+  "version": "${version}",
+  "name": "Plantus Maximus",
+  "description": "Plant more better!",
+  "authors": [
+    "Eric Sognefest",
+    "Benjamin Leavitt"
+  ],
+  "contact": {
+    "sources": "https://github.com/sognefej/PlantusMaximus"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/plantusmaximus/Plantus_Maximus.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.sognefej.plantusmaximus.PlantusMaximusMod"
+    ],
+    "client": [
+      "net.sognefej.plantusmaximus.PlantusMaximusClientMod"
+    ],
+    "modmenu": [
+      "net.sognefej.plantusmaximus.menu.PlantusMenu"
+    ]
+  },
+  "mixins": [
+    "plantusmaximus.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  },
+  "suggests": {
+    "diggusmaximus": "1.4.1-1.16.3"
+  }
+}

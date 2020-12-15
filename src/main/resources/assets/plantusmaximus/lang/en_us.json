@@ -1,0 +1,35 @@
+{
+  "text.autoconfig.plantusmaximus.title": "Plantus Maximus",
+
+  "text.autoconfig.plantusmaximus.category.general": "General",
+  "text.autoconfig.plantusmaximus.option.general.enabled": "Enabled",
+  "text.autoconfig.plantusmaximus.option.general.keyBinding": "Key Binding",
+  "text.autoconfig.plantusmaximus.option.general.invert": "Invert Key Binding Activation",
+
+
+  "text.autoconfig.plantusmaximus.category.seeds": "Seeds",
+  "text.autoconfig.plantusmaximus.option.seeds.plantingMode": "Planting Mode",
+  "text.autoconfig.plantusmaximus.option.seeds.useDefaults": "Use Defaults",
+  "text.autoconfig.plantusmaximus.option.seeds.useBlacklist": "Use Blacklist",
+  "text.autoconfig.plantusmaximus.option.seeds.columnConfigBounds": "Column Config Bounds",
+  "text.autoconfig.plantusmaximus.option.seeds.columnConfigBounds.placementMode": "Placement Mode",
+  "text.autoconfig.plantusmaximus.option.seeds.columnConfigBounds.width": "Width",
+  "text.autoconfig.plantusmaximus.option.seeds.columnConfigBounds.length": "Length",
+  "text.autoconfig.plantusmaximus.option.seeds.radiusConfigBounds": "Radius Config Bounds",
+  "text.autoconfig.plantusmaximus.option.seeds.radiusConfigBounds.radius": "Radius",
+  "text.autoconfig.plantusmaximus.option.seeds.allowedSeeds": "Seeds",
+
+
+  "text.autoconfig.plantusmaximus.category.tools": "Tools",
+  "text.autoconfig.plantusmaximus.option.tools.harvestMode": "Harvest Mode",
+  "text.autoconfig.plantusmaximus.option.tools.cancelDurability": "Cancel Durability",
+  "text.autoconfig.plantusmaximus.option.tools.useDefaults": "Use Defaults",
+  "text.autoconfig.plantusmaximus.option.tools.useBlacklist": "Use Blacklist",
+  "text.autoconfig.plantusmaximus.option.tools.columnConfigBounds": "Column Config Bounds",
+  "text.autoconfig.plantusmaximus.option.tools.columnConfigBounds.placementMode": "Placement Mode",
+  "text.autoconfig.plantusmaximus.option.tools.columnConfigBounds.width": "Width",
+  "text.autoconfig.plantusmaximus.option.tools.columnConfigBounds.length": "Length",
+  "text.autoconfig.plantusmaximus.option.tools.radiusConfigBounds": "Radius Config Bounds",
+  "text.autoconfig.plantusmaximus.option.tools.radiusConfigBounds.radius": "Radius",
+  "text.autoconfig.plantusmaximus.option.tools.allowedTools": "Tools"
+}
