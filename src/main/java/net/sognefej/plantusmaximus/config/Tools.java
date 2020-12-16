@@ -23,11 +23,9 @@ public class Tools implements ConfigData {
     @Comment("Cancel tool durability (when using mod)")
     public boolean cancelDurability = false;
 
-    @ConfigEntry.Gui.Tooltip()
     @Comment("Use default seed list (to change the list disable this setting)")
     public boolean useDefaults = true;
 
-    @ConfigEntry.Gui.Tooltip()
     @Comment("Invert list")
     public boolean useBlacklist = false;
 

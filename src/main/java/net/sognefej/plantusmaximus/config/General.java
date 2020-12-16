@@ -5,6 +5,7 @@ import me.sargunvohra.mcmods.autoconfig1u.ConfigData;
 import me.sargunvohra.mcmods.autoconfig1u.annotation.Config;
 
 import me.sargunvohra.mcmods.autoconfig1u.shadowed.blue.endless.jankson.Comment;
+
 import net.sognefej.plantusmaximus.config.autoconfig.annotation.CustomConfigEntry;
 
 

@@ -1,6 +1,7 @@
 package net.sognefej.plantusmaximus.planter;
 
 
+import net.minecraft.util.ActionResult;
 import net.minecraft.world.World;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -14,6 +15,7 @@ import net.minecraft.util.registry.Registry;
 
 import net.sognefej.plantusmaximus.PlantusMaximusMod;
 import net.sognefej.plantusmaximus.config.PlantusConfig;
+import net.sognefej.plantusmaximus.config.options.LayoutMode;
 import net.sognefej.plantusmaximus.util.BlockLayout;
 
 import java.util.List;
@@ -23,17 +25,24 @@ public class Planter {
     private final BlockPos startBlockPos;
     private final Identifier startBlockId;
     private final World world;
-    private final Hand hand;
+    private final Hand hand = Hand.MAIN_HAND;
     private final ServerPlayerInteractionManager interactionManager;
     private ServerPlayerEntity player;
+    private final LayoutMode layoutMode;
+    private int length = 0;
+    private int width = 0;
+    private int radius = 0;
 
-    public Planter(ServerPlayerInteractionManager interaction_manager, ServerPlayerEntity player, World world, Hand hand, BlockPos pos) {
-        this.interactionManager = interaction_manager;
+    public Planter(ServerPlayerEntity player, BlockPos pos, LayoutMode layoutMode, int length, int width, int radius) {
+        this.interactionManager = player.interactionManager;
         this.player = player;
-        this.world = world;
-        this.hand = hand;
+        this.world = player.getServerWorld();
         this.startBlockPos = pos;
         this.startBlockId = Registry.BLOCK.getId(world.getBlockState(startBlockPos).getBlock());
+        this.layoutMode = layoutMode;
+        this.length = length;
+        this.width = width;
+        this.radius = radius;
         BlockLayout.facing = player.getMovementDirection();
         BlockLayout.placementMode = PlantusConfig.get().tools.columnConfigBounds.placementMode;
     }
@@ -41,32 +50,16 @@ public class Planter {
     public void plant() {
         List<BlockPos> posList;
 
-        if (PlantusConfig.get().seeds.allowedSeeds.contains(player.getStackInHand(hand).getItem().getTranslationKey()) ^ PlantusConfig.get().seeds.useBlacklist) {
-            switch (PlantusConfig.get().seeds.plantingMode) {
-                case COLUMN:
-                    posList = BlockLayout.getBlocksColumn(this.startBlockPos, PlantusConfig.get().seeds.columnConfigBounds.width, PlantusConfig.get().seeds.columnConfigBounds.length);
-                    break;
-                case RADIATE:
-                    posList = BlockLayout.getBlocksRadius(this.startBlockPos, PlantusConfig.get().seeds.radiusConfigBounds.radius);
-                    break;
-                default:
-                    System.out.println(PlantusMaximusMod.MOD_ID + ": unimplemented LayoutMode");
-                    return;
-            }
-        } else if (PlantusConfig.get().tools.allowedTools.contains(player.getStackInHand(hand).getItem().getTranslationKey()) ^ PlantusConfig.get().tools.useBlacklist) {
-            switch (PlantusConfig.get().tools.harvestMode) {
-                case COLUMN:
-                    posList = BlockLayout.getBlocksColumn(this.startBlockPos, PlantusConfig.get().tools.columnConfigBounds.width, PlantusConfig.get().tools.columnConfigBounds.length);
-                    break;
-                case RADIATE:
-                    posList = BlockLayout.getBlocksRadius(this.startBlockPos, PlantusConfig.get().tools.radiusConfigBounds.radius);
-                    break;
-                default:
-                    System.out.println(PlantusMaximusMod.MOD_ID + ": unimplemented LayoutMode");
-                    return;
-            }
-        } else {
-            return;
+        switch (layoutMode) {
+            case COLUMN:
+                posList = BlockLayout.getBlocksColumn(this.startBlockPos, length, width);
+                break;
+            case RADIATE:
+                posList = BlockLayout.getBlocksRadius(this.startBlockPos, radius);
+                break;
+            default:
+                System.out.println(PlantusMaximusMod.MOD_ID + ": unimplemented LayoutMode");
+                return;
         }
 
         ((PlantingPlayerEntity) player).setPlanting(true);

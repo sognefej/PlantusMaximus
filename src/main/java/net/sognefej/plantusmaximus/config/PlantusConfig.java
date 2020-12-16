@@ -2,6 +2,7 @@ package net.sognefej.plantusmaximus.config;
 
 
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
+import me.sargunvohra.mcmods.autoconfig1u.ConfigHolder;
 import me.sargunvohra.mcmods.autoconfig1u.annotation.Config;
 import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
 import me.sargunvohra.mcmods.autoconfig1u.serializer.JanksonConfigSerializer;
@@ -42,42 +43,42 @@ public class PlantusConfig extends PartitioningSerializer.GlobalData {
         ToolDefaults defaultTools = new ToolDefaults();
         SeedDefaults seedDefaults = new SeedDefaults();
 
-        AutoConfig.register(
+        ConfigHolder<PlantusConfig> holder = AutoConfig.register(
                 PlantusConfig.class,
                 PartitioningSerializer.wrap(JanksonConfigSerializer::new)
         );
 
-        AutoConfig.getConfigHolder(PlantusConfig.class).registerSaveListener((manager, data) -> {
+        holder.registerSaveListener((manager, data) -> {
             if (data.tools.useDefaults) {
                 data.tools.allowedTools = defaultTools.defaultTools;
             }
 
-            if(data.seeds.useDefaults) {
+            if (data.seeds.useDefaults) {
                 data.seeds.allowedSeeds = seedDefaults.defaultSeeds;
             }
 
             return ActionResult.SUCCESS;
         });
 
-        AutoConfig.getConfigHolder(PlantusConfig.class).registerLoadListener((manager, data) -> {
+        holder.registerLoadListener((manager, data) -> {
             if (data.tools.useDefaults) {
                 data.tools.allowedTools = defaultTools.defaultTools;
             }
 
-            if(data.seeds.useDefaults) {
+            if (data.seeds.useDefaults) {
                 data.seeds.allowedSeeds = seedDefaults.defaultSeeds;
             }
 
             return ActionResult.SUCCESS;
         });
 
-        AutoConfig.getConfigHolder(PlantusConfig.class).load();
+        holder.load();
     }
 
-    @Environment(EnvType.CLIENT)
     public static void initClient() {
-        CustomGuiProviders customguiproviders = new CustomGuiProviders();
-        customguiproviders.registerKeyCodeEntry(PlanterKeybinding.getKeybinding());
+        CustomGuiProviders customGuiProviders = new CustomGuiProviders();
+
+        customGuiProviders.registerKeyCodeEntry(PlanterKeybinding.getKeybinding());
     }
 
     public static PlantusConfig get() {
