@@ -1,3 +1,5 @@
+![build](https://github.com/sognefej/PlantusMaximus/workflows/build/badge.svg)
+
 # PlantusMaximus
 Plant more better!
 
