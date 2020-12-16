@@ -21,11 +21,9 @@ public class Seeds implements ConfigData {
     @Comment("Switch between radiate and column mode")
     public LayoutMode plantingMode = LayoutMode.COLUMN;
 
-    @ConfigEntry.Gui.Tooltip()
     @Comment("Use default seed list (to change the list disable this setting)")
     public boolean useDefaults = true;
 
-    @ConfigEntry.Gui.Tooltip()
     @Comment("Invert list")
     public boolean useBlacklist = false;
 

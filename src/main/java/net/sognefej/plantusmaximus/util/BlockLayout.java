@@ -75,11 +75,11 @@ public class BlockLayout {
         return blockPosList;
     }
 
-    public static List<BlockPos> getBlocksColumn(BlockPos pos, int width, int column_len) {
+    public static List<BlockPos> getBlocksColumn(BlockPos pos, int length, int width) {
         List<BlockPos> blockPosList = new ArrayList<>();
         pos = pos.offset(facing.getOpposite());
 
-        for (int i = 0; i < column_len; i++) {
+        for (int i = 0; i < length; i++) {
             expand(pos, 0, width, blockPosList);
 
             pos = pos.offset(facing);
