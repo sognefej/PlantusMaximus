@@ -1,0 +1,35 @@
+{
+  "text.autoconfig.plantusmaximus.title": "Plantus Maximus",
+
+  "text.autoconfig.plantusmaximus.category.general": "Genel",
+  "text.autoconfig.plantusmaximus.option.general.enabled": "Aktive edildi",
+  "text.autoconfig.plantusmaximus.option.general.keyBinding": "Tuş ataması",
+  "text.autoconfig.plantusmaximus.option.general.invert": "Ters tuş ataması",
+
+
+  "text.autoconfig.plantusmaximus.category.seeds": "Tohumlar",
+  "text.autoconfig.plantusmaximus.option.seeds.plantingMode": "Ekme modu",
+  "text.autoconfig.plantusmaximus.option.seeds.useDefaults": "Varsayılanı kullan",
+  "text.autoconfig.plantusmaximus.option.seeds.useBlacklist": "Karaliste kullan",
+  "text.autoconfig.plantusmaximus.option.seeds.columnConfigBounds": "Sütun yapılandırma snırları",
+  "text.autoconfig.plantusmaximus.option.seeds.columnConfigBounds.placementMode": "Yerleştirme modu",
+  "text.autoconfig.plantusmaximus.option.seeds.columnConfigBounds.width": "Genişlik",
+  "text.autoconfig.plantusmaximus.option.seeds.columnConfigBounds.length": "Uzunluk",
+  "text.autoconfig.plantusmaximus.option.seeds.radiusConfigBounds": "Yarıçap yapılandırması sınırları",
+  "text.autoconfig.plantusmaximus.option.seeds.radiusConfigBounds.radius": "Yarıçap",
+  "text.autoconfig.plantusmaximus.option.seeds.allowedSeeds": "Tohumlar",
+
+
+  "text.autoconfig.plantusmaximus.category.tools": "Araçlar",
+  "text.autoconfig.plantusmaximus.option.tools.harvestMode": "Hasat modu",
+  "text.autoconfig.plantusmaximus.option.tools.cancelDurability": "İptal dayanılıklığı",
+  "text.autoconfig.plantusmaximus.option.tools.useDefaults": "Varsayılanları kullan",
+  "text.autoconfig.plantusmaximus.option.tools.useBlacklist": "Karaliste kullan",
+  "text.autoconfig.plantusmaximus.option.tools.columnConfigBounds": "Sütun Yapılandırma Sınırları",
+  "text.autoconfig.plantusmaximus.option.tools.columnConfigBounds.placementMode": "Yerleştirme modu",
+  "text.autoconfig.plantusmaximus.option.tools.columnConfigBounds.width": "Genişlik",
+  "text.autoconfig.plantusmaximus.option.tools.columnConfigBounds.length": "Uzunluk",
+  "text.autoconfig.plantusmaximus.option.tools.radiusConfigBounds": "Yarıçap yapılandırması sınırları",
+  "text.autoconfig.plantusmaximus.option.tools.radiusConfigBounds.radius": "Yarıçap",
+  "text.autoconfig.plantusmaximus.option.tools.allowedTools": "Araçlar"
+}
