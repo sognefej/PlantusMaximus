@@ -11,7 +11,7 @@ However, due to the way the mod works you can use it as a general block placemen
 
 
 <p align="center">
-  <img src="https://github.com/sognefej/PlantusMaximus/blob/master/media/demo.gif" />
+  <img src="https://github.com/sognefej/PlantusMaximus/blob/master/media/demo.gif?raw=true" />
 </p>
 
 
