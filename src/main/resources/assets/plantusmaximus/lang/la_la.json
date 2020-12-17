@@ -1,0 +1,35 @@
+{
+  "text.autoconfig.plantusmaximus.title": "Plantus Maximus",
+
+  "text.autoconfig.plantusmaximus.category.general": "Generalis",
+  "text.autoconfig.plantusmaximus.option.general.enabled": "Permissus",
+  "text.autoconfig.plantusmaximus.option.general.keyBinding": "Symbolem Obligatio",
+  "text.autoconfig.plantusmaximus.option.general.invert": "Inverto Symbolum Actio",
+
+
+  "text.autoconfig.plantusmaximus.category.seeds": "Seminibus",
+  "text.autoconfig.plantusmaximus.option.seeds.plantingMode": "Modus Seminandum",
+  "text.autoconfig.plantusmaximus.option.seeds.useDefaults": "Uti Praedeterminatae",
+  "text.autoconfig.plantusmaximus.option.seeds.useBlacklist": "Uti Album Nigeros",
+  "text.autoconfig.plantusmaximus.option.seeds.columnConfigBounds": "Columna Terminis",
+  "text.autoconfig.plantusmaximus.option.seeds.columnConfigBounds.placementMode": "Modus Locens",
+  "text.autoconfig.plantusmaximus.option.seeds.columnConfigBounds.width": "Latitudo",
+  "text.autoconfig.plantusmaximus.option.seeds.columnConfigBounds.length": "Longetudinem",
+  "text.autoconfig.plantusmaximus.option.seeds.radiusConfigBounds": "Radium Terminibus",
+  "text.autoconfig.plantusmaximus.option.seeds.radiusConfigBounds.radius": "Radius",
+  "text.autoconfig.plantusmaximus.option.seeds.allowedSeeds": "Seminibus",
+
+
+  "text.autoconfig.plantusmaximus.category.tools": "Instrumenti",
+  "text.autoconfig.plantusmaximus.option.tools.harvestMode": "Modus Messis",
+  "text.autoconfig.plantusmaximus.option.tools.cancelDurability": "Ignoro Diuternitatem",
+  "text.autoconfig.plantusmaximus.option.tools.useDefaults": "Uti Praedeterminatae",
+  "text.autoconfig.plantusmaximus.option.tools.useBlacklist": "Uti Album Nigeros",
+  "text.autoconfig.plantusmaximus.option.tools.columnConfigBounds": "Columna Terminis",
+  "text.autoconfig.plantusmaximus.option.tools.columnConfigBounds.placementMode": "Modus Locens",
+  "text.autoconfig.plantusmaximus.option.tools.columnConfigBounds.width": "Latitudo",
+  "text.autoconfig.plantusmaximus.option.tools.columnConfigBounds.length": "Longetudinem",
+  "text.autoconfig.plantusmaximus.option.tools.radiusConfigBounds": "Radium Terminibus",
+  "text.autoconfig.plantusmaximus.option.tools.radiusConfigBounds.radius": "Radius",
+  "text.autoconfig.plantusmaximus.option.tools.allowedTools": "Instrumenti"
+}
