@@ -25,13 +25,10 @@ public class Planter {
     private final BlockPos startBlockPos;
     private final Identifier startBlockId;
     private final World world;
-    private final Hand hand = Hand.MAIN_HAND;
     private final ServerPlayerInteractionManager interactionManager;
     private ServerPlayerEntity player;
     private final LayoutMode layoutMode;
-    private int length = 0;
-    private int width = 0;
-    private int radius = 0;
+    private int length, width, radius;
 
     public Planter(ServerPlayerEntity player, BlockPos pos, LayoutMode layoutMode, int length, int width, int radius) {
         this.interactionManager = player.interactionManager;
@@ -72,9 +69,9 @@ public class Planter {
     private void plantAt(BlockPos pos) {
         Identifier block = Registry.BLOCK.getId(PlanterHelper.getBlockAt(world, pos));
         BlockHitResult block_hit_result = new BlockHitResult(player.getPos(), Direction.UP, pos, false);
-        ItemStack itemStack = this.player.getStackInHand(hand);
+        ItemStack itemStack = this.player.getMainHandStack();
         if (PlanterHelper.isTheSameBlock(startBlockId, block, world)) {
-            this.interactionManager.interactBlock(this.player, this.world, itemStack, this.hand, block_hit_result);
+            this.interactionManager.interactBlock(this.player, this.world, itemStack, Hand.MAIN_HAND, block_hit_result);
         }
     }
 }

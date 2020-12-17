@@ -38,7 +38,7 @@ public class PlanterCallback {
         InteractBlockCallback.EVENT.register((player, hit_result) -> {
             if (PlantusConfig.get().general.enabled && PlanterKeybinding.isPressed() && !((PlantingPlayerEntity) player).isPlanting()) {
 
-                if (PlantusConfig.get().seeds.allowedSeeds.contains(player.getStackInHand(Hand.MAIN_HAND).getItem().getTranslationKey()) ^ PlantusConfig.get().seeds.useBlacklist) {
+                if (PlantusConfig.get().seeds.allowedSeeds.contains(player.getMainHandStack().getItem().getTranslationKey()) ^ PlantusConfig.get().seeds.useBlacklist) {
                     switch (PlantusConfig.get().seeds.plantingMode) {
                         case COLUMN:
                             int length = PlantusConfig.get().seeds.columnConfigBounds.length;
@@ -55,7 +55,7 @@ public class PlanterCallback {
                             System.out.println(PlantusMaximusMod.MOD_ID + ": unimplemented LayoutMode");
                             return ActionResult.PASS;
                     }
-                } else if (PlantusConfig.get().tools.allowedTools.contains(player.getStackInHand(Hand.MAIN_HAND).getItem().getTranslationKey()) ^ PlantusConfig.get().tools.useBlacklist) {
+                } else if (PlantusConfig.get().tools.allowedTools.contains(player.getMainHandStack().getItem().getTranslationKey()) ^ PlantusConfig.get().tools.useBlacklist) {
                     switch (PlantusConfig.get().tools.harvestMode) {
                         case COLUMN:
                             int length = PlantusConfig.get().tools.columnConfigBounds.length;
