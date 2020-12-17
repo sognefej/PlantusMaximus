@@ -1,5 +1,6 @@
 # PlantusMaximus ![build](https://github.com/sognefej/PlantusMaximus/workflows/build/badge.svg)
 Plant more better!
+
 Plant and till configurable areas to make life easier. Pairs well with [DiggusMaximus](https://www.curseforge.com/minecraft/mc-mods/diggus-maximus).
 
 **Currently in Beta!**
@@ -31,7 +32,6 @@ All steps below apply to tools as well.
 ### Use all items
 1. Set Use Defaults to false
 1. Reset Seeds list
-1. Add translation keys for the items you want black listed
 1. Save 
 
 ## Default Items and Blocks
