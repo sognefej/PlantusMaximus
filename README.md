@@ -24,7 +24,7 @@ However, due to the way the mod works you can use it as a general block placemen
 - Whitelist/Blacklist items and tools
 - Change between radiate and column modes (configure tools and items separately) 
 
-## configureing the mod
+## Configuring the mod
 All steps below apply to tools as well. 
 
 ### Making changes to the seeds list
