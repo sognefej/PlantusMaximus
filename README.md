@@ -3,6 +3,9 @@ Plant more better!
 
 Plant and till configurable areas to make life easier. Pairs well with [DiggusMaximus](https://www.curseforge.com/minecraft/mc-mods/diggus-maximus).
 
+[See it on CurseForge!](https://www.curseforge.com/minecraft/mc-mods/plantusmaximus)
+
+
 **Currently in Beta!**
 
 ## What does it do? 
