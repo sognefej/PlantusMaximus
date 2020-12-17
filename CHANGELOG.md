@@ -1,6 +1,9 @@
 # Unreleased
 Changes to be released
 
+## Fix
+- Issue where sound would not play when using mod #4
+
 ## Add
 - Turkish Translation 
 - Latin Translation
