@@ -1,15 +1,40 @@
-![build](https://github.com/sognefej/PlantusMaximus/workflows/build/badge.svg)
-
-# PlantusMaximus
+# PlantusMaximus ![build](https://github.com/sognefej/PlantusMaximus/workflows/build/badge.svg)
 Plant more better!
-
-## Features
 Plant and till configurable areas to make life easier. Pairs well with [DiggusMaximus](https://www.curseforge.com/minecraft/mc-mods/diggus-maximus).
-
 
 **Currently in Beta!**
 
-## Supported Items and Blocks
+## What does it do? 
+It's meant to be used as a quality of life planting and farming mod. It allows the player to till a large plot of land, and place crops right away. 
+However, due to the way the mod works you can use it as a general block placement mod. 
+
+## Features
+- Enable and disable mod
+- Configure keybinding
+- Invert keybinding
+- Cancel tool durability (while using mod)
+- Whitelist/Blacklist items and tools
+- Change between radiate and column modes (configure tools and items separately) 
+
+## configureing the mod
+All steps below apply to tools as well. 
+
+### Making changes to the seeds list
+1. Set Use Defaults to false
+
+### Black listing items 
+1. Set Use Defaults to false
+1. Reset Seeds list
+1. Add translation keys for the items you want black listed
+1. Save 
+
+### Use all items
+1. Set Use Defaults to false
+1. Reset Seeds list
+1. Add translation keys for the items you want black listed
+1. Save 
+
+## Default Items and Blocks
 - Wheat
 - Carrot
 - Potato
