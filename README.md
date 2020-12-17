@@ -7,7 +7,7 @@ Plant more better!
 Plant and till configurable areas to make life easier. Pairs well with [DiggusMaximus](https://www.curseforge.com/minecraft/mc-mods/diggus-maximus).
 
 
-**Currently in Alpha!**
+**Currently in Beta!**
 
 ## Supported Items and Blocks
 - Wheat
