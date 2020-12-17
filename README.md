@@ -9,6 +9,8 @@ Plant and till configurable areas to make life easier. Pairs well with [DiggusMa
 It's meant to be used as a quality of life planting and farming mod. It allows the player to till a large plot of land, and place crops right away. 
 However, due to the way the mod works you can use it as a general block placement mod. 
 
+![Alt Text](media/demo.gif)
+
 ## Features
 - Enable and disable mod
 - Configure keybinding
