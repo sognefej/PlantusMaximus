@@ -23,13 +23,14 @@ public class ServerPacketCallback {
     private static final Identifier PLANTER_PACKET = new Identifier(PlantusMaximusMod.MOD_ID, "planter_packet");
 
     @Environment(EnvType.CLIENT)
-    public static void sendPlanterPacket(BlockPos blockPos, LayoutMode mode, int length, int width, int radius) {
+    public static void sendPlanterPacket(BlockPos blockPos, LayoutMode mode, int length, int width, int radius, boolean pullInventory) {
         PacketByteBuf buf = new PacketByteBuf(Unpooled.buffer());
         buf.writeBlockPos(blockPos);
         buf.writeEnumConstant(mode);
         buf.writeInt(length);
         buf.writeInt(width);
         buf.writeInt(radius);
+        buf.writeBoolean(pullInventory);
         MinecraftClient.getInstance().getNetworkHandler().getConnection().send(new CustomPayloadC2SPacket(PLANTER_PACKET, new PacketByteBuf(buf)));
     }
 
@@ -40,10 +41,11 @@ public class ServerPacketCallback {
             int length = packetByteBuf.readInt();
             int width = packetByteBuf.readInt();
             int radius = packetByteBuf.readInt();
+            boolean pullInventory = packetByteBuf.readBoolean();
 
             packetContext.getTaskQueue().execute(() -> {
                 ServerPlayerEntity player = (ServerPlayerEntity) packetContext.getPlayer();
-                Planter planter = new Planter(player, blockPos, mode, length, width, radius);
+                Planter planter = new Planter(player, blockPos, mode, length, width, radius, pullInventory);
                 planter.plant();
             });
         });
