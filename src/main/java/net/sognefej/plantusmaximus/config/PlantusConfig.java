@@ -9,9 +9,6 @@ import me.sargunvohra.mcmods.autoconfig1u.serializer.JanksonConfigSerializer;
 import me.sargunvohra.mcmods.autoconfig1u.serializer.PartitioningSerializer;
 import me.sargunvohra.mcmods.autoconfig1u.shadowed.blue.endless.jankson.Comment;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
-
 import net.minecraft.util.ActionResult;
 
 import net.sognefej.plantusmaximus.PlantusMaximusMod;
@@ -78,7 +75,7 @@ public class PlantusConfig extends PartitioningSerializer.GlobalData {
     public static void initClient() {
         CustomGuiProviders customGuiProviders = new CustomGuiProviders();
 
-        customGuiProviders.registerKeyCodeEntry(PlanterKeybinding.getKeybinding());
+        customGuiProviders.registerKeyCodeEntry();
     }
 
     public static PlantusConfig get() {
