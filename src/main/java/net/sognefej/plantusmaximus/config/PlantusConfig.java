@@ -9,13 +9,14 @@ import me.sargunvohra.mcmods.autoconfig1u.serializer.JanksonConfigSerializer;
 import me.sargunvohra.mcmods.autoconfig1u.serializer.PartitioningSerializer;
 import me.sargunvohra.mcmods.autoconfig1u.shadowed.blue.endless.jankson.Comment;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.util.ActionResult;
 
 import net.sognefej.plantusmaximus.PlantusMaximusMod;
 import net.sognefej.plantusmaximus.config.autoconfig.CustomGuiProviders;
 import net.sognefej.plantusmaximus.config.defaults.SeedDefaults;
 import net.sognefej.plantusmaximus.config.defaults.ToolDefaults;
-import net.sognefej.plantusmaximus.planter.PlanterKeybinding;
 
 
 @Config.Gui.Background("minecraft:textures/block/farmland.png")
@@ -72,6 +73,7 @@ public class PlantusConfig extends PartitioningSerializer.GlobalData {
         holder.load();
     }
 
+    @Environment(EnvType.CLIENT)
     public static void initClient() {
         CustomGuiProviders customGuiProviders = new CustomGuiProviders();
 

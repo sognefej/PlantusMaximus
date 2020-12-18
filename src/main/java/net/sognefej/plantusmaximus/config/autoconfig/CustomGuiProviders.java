@@ -18,7 +18,6 @@ import net.sognefej.plantusmaximus.config.autoconfig.annotation.CustomConfigEntr
 import net.sognefej.plantusmaximus.config.PlantusConfig;
 
 import java.util.Collections;
-import java.util.Optional;
 
 
 @Environment(EnvType.CLIENT)
