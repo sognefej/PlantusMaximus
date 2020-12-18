@@ -3,7 +3,6 @@ package net.sognefej.plantusmaximus.config.autoconfig;
 
 import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
 
-import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 
 import static me.sargunvohra.mcmods.autoconfig1u.util.Utils.getUnsafely;
@@ -19,7 +18,6 @@ import net.sognefej.plantusmaximus.config.autoconfig.annotation.CustomConfigEntr
 import net.sognefej.plantusmaximus.config.PlantusConfig;
 
 import java.util.Collections;
-import java.util.concurrent.Callable;
 
 
 @Environment(EnvType.CLIENT)
