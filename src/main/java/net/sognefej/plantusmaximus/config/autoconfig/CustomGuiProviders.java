@@ -27,21 +27,39 @@ public class CustomGuiProviders {
 
     public void registerKeyCodeEntry() {
         AutoConfig.getGuiRegistry(PlantusConfig.class).registerAnnotationProvider(
-                (i13n, field, config, defaults, guiProvider) -> Collections.singletonList(
-                        ENTRY_BUILDER.startKeyCodeField(
-                                new TranslatableText(i13n),
-                                InputUtil.fromTranslationKey(getUnsafely(field, config))
-                        )
-                                .setDefaultValue(() -> InputUtil.fromTranslationKey(getUnsafely(field, defaults)))
-                                .setSaveConsumer(
-                                newValue -> setUnsafely(
-                                        field,
-                                        config,
-                                        newValue.getTranslationKey()
-                                )
+                (i13n, field, config, defaults, guiProvider) -> {
+                    InputUtil.Key key;
+                    String keyCode = getUnsafely(field, config);
+                    try {
+                       key = InputUtil.fromTranslationKey(keyCode);
+                    } catch (IllegalArgumentException err) {
+                        System.out.println(err.getMessage());
+                        key = InputUtil.UNKNOWN_KEY;
+                    }
 
-                        ).build()
-                ),
+                    return Collections.singletonList(
+                            ENTRY_BUILDER.startKeyCodeField(
+                                    new TranslatableText(i13n),
+                                    key
+                            )
+                                    .setDefaultValue(() -> {
+                                        try {
+                                            return InputUtil.fromTranslationKey(getUnsafely(field, defaults));
+                                        } catch (IllegalArgumentException err) {
+                                            System.out.println(err.getMessage());
+                                            return InputUtil.UNKNOWN_KEY;
+                                        }
+                                    })
+                                    .setSaveConsumer(
+                                            newValue -> setUnsafely(
+                                                    field,
+                                                    config,
+                                                    newValue.getTranslationKey()
+                                            )
+
+                                    ).build()
+                    );
+                },
                 field -> field.getType() == String.class,
                 CustomConfigEntry.Gui.KeyCodeEntry.class
         );
