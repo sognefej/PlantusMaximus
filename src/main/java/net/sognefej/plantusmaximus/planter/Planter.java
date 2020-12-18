@@ -1,7 +1,6 @@
 package net.sognefej.plantusmaximus.planter;
 
 
-import net.minecraft.util.ActionResult;
 import net.minecraft.world.World;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -29,17 +28,21 @@ public class Planter {
     private ServerPlayerEntity player;
     private final LayoutMode layoutMode;
     private int length, width, radius;
+    private final ItemStack targetStack;
+    private final boolean pullInventory;
 
-    public Planter(ServerPlayerEntity player, BlockPos pos, LayoutMode layoutMode, int length, int width, int radius) {
+    public Planter(ServerPlayerEntity player, BlockPos pos, LayoutMode layoutMode, int length, int width, int radius, boolean pullInventory) {
         this.interactionManager = player.interactionManager;
         this.player = player;
         this.world = player.getServerWorld();
         this.startBlockPos = pos;
+        this.targetStack = player.getMainHandStack().copy();
         this.startBlockId = Registry.BLOCK.getId(world.getBlockState(startBlockPos).getBlock());
         this.layoutMode = layoutMode;
         this.length = length;
         this.width = width;
         this.radius = radius;
+        this.pullInventory = pullInventory;
         BlockLayout.facing = player.getMovementDirection();
         BlockLayout.placementMode = PlantusConfig.get().tools.columnConfigBounds.placementMode;
     }
@@ -69,9 +72,16 @@ public class Planter {
     private void plantAt(BlockPos pos) {
         Identifier block = Registry.BLOCK.getId(PlanterHelper.getBlockAt(world, pos));
         BlockHitResult block_hit_result = new BlockHitResult(player.getPos(), Direction.UP, pos, false);
-        ItemStack itemStack = this.player.getMainHandStack();
+        if (this.player.getMainHandStack().isEmpty() && pullInventory) {
+            int slot = this.player.inventory.method_7371(targetStack);
+            if (slot != -1) {
+                this.player.setStackInHand(Hand.MAIN_HAND, this.player.inventory.getStack(slot));
+                this.player.inventory.removeStack(slot);
+            }
+        }
+
         if (PlanterHelper.isTheSameBlock(startBlockId, block, world)) {
-            this.interactionManager.interactBlock(this.player, this.world, itemStack, Hand.MAIN_HAND, block_hit_result);
+            this.interactionManager.interactBlock(this.player, this.world, this.player.getMainHandStack(), Hand.MAIN_HAND, block_hit_result);
         }
     }
 }

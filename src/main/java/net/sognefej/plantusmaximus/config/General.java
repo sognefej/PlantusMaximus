@@ -20,4 +20,7 @@ public class General implements ConfigData {
 
     @Comment("Invert Keybinding")
     public boolean invert = false;
+
+    @Comment("If out of items pull more from inventory")
+    public boolean pullInventory = true;
 }

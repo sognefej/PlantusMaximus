@@ -7,7 +7,8 @@ Changes to be released
 
 ## Add
 - Turkish Translation 
-- Latin Translation
+- Latin Translation 
+- Add pull from inventory option #14 (New Feature!!!)
 
 # [v0.0.2-1.16.4 (Beta)](https://github.com/sognefej/PlantusMaximus/releases/tag/v0.0.2-1.16.4) - 12/17/2020
 
