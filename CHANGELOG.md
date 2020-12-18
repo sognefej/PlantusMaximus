@@ -3,7 +3,7 @@ Changes to be released
 
 ## Fix
 - Issue where sound would not play when using mod #4
-- Issue where gui entry for keybinding would not update
+- Issue where gui entry for keybinding would not update #11
 
 ## Add
 - Turkish Translation 
