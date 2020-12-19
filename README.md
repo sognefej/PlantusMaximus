@@ -5,6 +5,7 @@ Plant and till configurable areas to make life easier. Pairs well with [DiggusMa
 
 [See it on CurseForge!](https://www.curseforge.com/minecraft/mc-mods/plantusmaximus)
 
+[See it on Modrinth!](https://modrinth.com/mod/plantusmaximus)
 
 **Currently in Beta!**
 
