@@ -1,7 +1,6 @@
 package net.sognefej.plantusmaximus;
 
 
-import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
 import net.fabricmc.api.ModInitializer;
 
 import net.sognefej.plantusmaximus.callback.ServerPacketCallback;
