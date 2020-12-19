@@ -12,7 +12,7 @@
     "sources": "https://github.com/sognefej/PlantusMaximus"
   },
   "license": "CC0-1.0",
-  "icon": "assets/plantusmaximus/Plantus_Maximus.png",
+  "icon": "assets/plantusmaximus/Plantus_Maximus.jpg",
   "environment": "*",
   "entrypoints": {
     "main": [

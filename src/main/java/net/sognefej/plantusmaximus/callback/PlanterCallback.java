@@ -6,7 +6,6 @@ import net.fabricmc.fabric.api.event.EventFactory;
 
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 
 import net.sognefej.plantusmaximus.PlantusMaximusMod;
@@ -63,11 +62,13 @@ public class PlanterCallback {
                             int length = PlantusConfig.get().tools.columnConfigBounds.length;
                             int width = PlantusConfig.get().tools.columnConfigBounds.width;
 
+                            ServerPacketCallback.sendTimerPacker(PlantusConfig.get().general.headStart);
                             ServerPacketCallback.sendPlanterPacket(hit_result.getBlockPos(), LayoutMode.COLUMN, length, width, 0, pullInventory);
                             break;
                         case RADIATE:
                             int radius = PlantusConfig.get().tools.radiusConfigBounds.radius;
 
+                            ServerPacketCallback.sendTimerPacker(PlantusConfig.get().general.headStart);
                             ServerPacketCallback.sendPlanterPacket(hit_result.getBlockPos(), LayoutMode.RADIATE, 0, 0, radius, pullInventory);
                             break;
                         default:

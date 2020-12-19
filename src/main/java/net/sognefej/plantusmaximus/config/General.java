@@ -4,6 +4,7 @@ package net.sognefej.plantusmaximus.config;
 import me.sargunvohra.mcmods.autoconfig1u.ConfigData;
 import me.sargunvohra.mcmods.autoconfig1u.annotation.Config;
 
+import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
 import me.sargunvohra.mcmods.autoconfig1u.shadowed.blue.endless.jankson.Comment;
 
 import net.sognefej.plantusmaximus.config.autoconfig.annotation.CustomConfigEntry;
@@ -23,4 +24,8 @@ public class General implements ConfigData {
 
     @Comment("If out of items pull more from inventory")
     public boolean pullInventory = true;
+
+    @ConfigEntry.BoundedDiscrete(min = 1, max = 60)
+    @Comment("Head start before farmland turns back to dirt")
+    public int headStart = 10;
 }
