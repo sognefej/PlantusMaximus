@@ -25,7 +25,7 @@ public class General implements ConfigData {
     @Comment("If out of items pull more from inventory")
     public boolean pullInventory = true;
 
-    @ConfigEntry.BoundedDiscrete(min = 1, max = 60)
+    @ConfigEntry.BoundedDiscrete(min = 0, max = 60)
     @Comment("Head start before farmland turns back to dirt")
     public int headStart = 10;
 }
