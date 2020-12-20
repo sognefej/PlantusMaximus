@@ -25,9 +25,10 @@ public class Planter {
     private final Identifier startBlockId;
     private final World world;
     private final ServerPlayerInteractionManager interactionManager;
-    private ServerPlayerEntity player;
+    private final ServerPlayerEntity player;
     private final LayoutMode layoutMode;
-    private int length, width, radius;
+    private final int length, width, radius;
+    private int interactions = 0;
     private final ItemStack targetStack;
     private final boolean pullInventory;
 
@@ -58,18 +59,23 @@ public class Planter {
                 posList = BlockLayout.getBlocksRadius(this.startBlockPos, radius);
                 break;
             default:
-                System.out.println(PlantusMaximusMod.MOD_ID + ": unimplemented LayoutMode");
+                System.err.println(PlantusMaximusMod.MOD_ID + ": unimplemented LayoutMode");
                 return;
         }
 
         ((PlantingPlayerEntity) player).setPlanting(true);
         for(BlockPos pos : posList) {
+            interactions++;
             plantAt(pos);
         }
         ((PlantingPlayerEntity) player).setPlanting(false);
     }
 
     private void plantAt(BlockPos pos) {
+        if (interactions > PlanterHelper.maxInteractions) {
+            return;
+        }
+
         Identifier block = Registry.BLOCK.getId(PlanterHelper.getBlockAt(world, pos));
         BlockHitResult block_hit_result = new BlockHitResult(player.getPos(), Direction.UP, pos, false);
         if (this.player.getMainHandStack().isEmpty() && pullInventory) {

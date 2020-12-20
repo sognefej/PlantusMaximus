@@ -11,6 +11,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
+import net.sognefej.plantusmaximus.config.PlantusServerConfig;
 
 import java.util.Collection;
 import java.util.List;
@@ -18,6 +19,9 @@ import java.util.Map;
 
 
 public class PlanterHelper {
+    // Just setting a hard limit of 2048 just in case something insane gets set
+    static int maxInteractions = Math.min(new PlantusServerConfig().loadConfig().maxInteractions, 2048);
+
     static Block getBlockAt(World world, BlockPos pos) {
         return (world.getBlockState(pos).getBlock());
     }

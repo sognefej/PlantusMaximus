@@ -53,7 +53,7 @@ public class PlanterCallback {
                             ServerPacketCallback.sendPlanterPacket(hit_result.getBlockPos(), LayoutMode.RADIATE, 0, 0, radius, pullInventory);
                             break;
                         default:
-                            System.out.println(PlantusMaximusMod.MOD_ID + ": unimplemented LayoutMode");
+                            System.err.println(PlantusMaximusMod.MOD_ID + ": unimplemented LayoutMode");
                             return ActionResult.PASS;
                     }
                 } else if (PlantusConfig.get().tools.allowedTools.contains(player.getMainHandStack().getItem().getTranslationKey()) ^ PlantusConfig.get().tools.useBlacklist) {
@@ -72,7 +72,7 @@ public class PlanterCallback {
                             ServerPacketCallback.sendPlanterPacket(hit_result.getBlockPos(), LayoutMode.RADIATE, 0, 0, radius, pullInventory);
                             break;
                         default:
-                            System.out.println(PlantusMaximusMod.MOD_ID + ": unimplemented LayoutMode");
+                            System.err.println(PlantusMaximusMod.MOD_ID + ": unimplemented LayoutMode");
                             return ActionResult.PASS;
                     }
                 } else {
