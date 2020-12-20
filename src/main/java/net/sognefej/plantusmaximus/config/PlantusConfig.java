@@ -40,6 +40,7 @@ public class PlantusConfig extends PartitioningSerializer.GlobalData {
     public static void init() {
         ToolDefaults defaultTools = new ToolDefaults();
         SeedDefaults seedDefaults = new SeedDefaults();
+        PlantusServerConfig plantusServerConfig = new PlantusServerConfig();
 
         ConfigHolder<PlantusConfig> holder = AutoConfig.register(
                 PlantusConfig.class,
@@ -66,6 +67,8 @@ public class PlantusConfig extends PartitioningSerializer.GlobalData {
             if (data.seeds.useDefaults) {
                 data.seeds.allowedSeeds = seedDefaults.defaultSeeds;
             }
+
+            plantusServerConfig.createDefaultConfig();
 
             return ActionResult.SUCCESS;
         });

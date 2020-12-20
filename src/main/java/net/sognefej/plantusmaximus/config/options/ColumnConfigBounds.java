@@ -11,12 +11,12 @@ public class ColumnConfigBounds {
     public PlacementMode placementMode;
 
     @ConfigEntry.Gui.CollapsibleObject
-    @ConfigEntry.BoundedDiscrete(min = 1, max = 20)
+    @ConfigEntry.BoundedDiscrete(min = 1, max = 21)
     @Comment("Column width in blocks")
     public int width;
 
     @ConfigEntry.Gui.CollapsibleObject()
-    @ConfigEntry.BoundedDiscrete(min = 1, max = 20)
+    @ConfigEntry.BoundedDiscrete(min = 1, max = 21)
     @Comment("Column length in blocks")
     public int length;
 
