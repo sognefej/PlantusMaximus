@@ -5,7 +5,9 @@ import me.sargunvohra.mcmods.autoconfig1u.shadowed.blue.endless.jankson.Comment;
 import me.sargunvohra.mcmods.autoconfig1u.shadowed.blue.endless.jankson.Jankson;
 import me.sargunvohra.mcmods.autoconfig1u.shadowed.blue.endless.jankson.JsonObject;
 import me.sargunvohra.mcmods.autoconfig1u.shadowed.blue.endless.jankson.impl.SyntaxError;
+
 import net.fabricmc.loader.FabricLoader;
+
 import net.sognefej.plantusmaximus.PlantusMaximusMod;
 
 import java.io.File;
@@ -45,7 +47,7 @@ public class PlantusServerConfig {
         try {
             if(!configFile.exists()) {
                 if(!configFile.createNewFile()) {
-                    System.err.println(PlantusMaximusMod.MOD_ID + "failed to create server config");
+                    System.err.println(PlantusMaximusMod.MOD_ID + ": failed to create server config");
                 }
 
                 FileOutputStream out = new FileOutputStream(configFile, false);
