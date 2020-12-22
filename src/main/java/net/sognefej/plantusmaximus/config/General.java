@@ -32,6 +32,7 @@ public class General implements ConfigData {
     @Comment("Enable highlight")
     public boolean highlightPreview = true;
 
+    @ConfigEntry.Gui.RequiresRestart
     @Comment("Enable smooth lines")
     public boolean smoothPreviewLines = false;
 }
