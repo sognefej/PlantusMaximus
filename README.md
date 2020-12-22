@@ -18,7 +18,6 @@ However, due to the way the mod works you can use it as a general block placemen
 </p>
 
 
-
 ## Features
 - Enable and disable mod
 - Configure keybinding
@@ -26,6 +25,8 @@ However, due to the way the mod works you can use it as a general block placemen
 - Cancel tool durability (while using mod)
 - Whitelist/Blacklist items and tools
 - Change between radiate and column modes (configure tools and items separately) 
+- Highlight preview 
+- Delay farmblock decay 
 
 ## Configuring the mod
 All steps below apply to tools as well. 
