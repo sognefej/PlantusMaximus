@@ -12,6 +12,7 @@ Firt full release!
 - Add pull from inventory option [#14](https://github.com/sognefej/PlantusMaximus/issues/14) 
 - Add delay to farmblock decay [#6](https://github.com/sognefej/PlantusMaximus/issues/6)
 - Add highlight preview [#13](https://github.com/sognefej/PlantusMaximus/issues/13)
+- Add server limits [#7](https://github.com/sognefej/PlantusMaximus/issues/7)
 
 # [v0.0.2-1.16.4 (Beta)](https://github.com/sognefej/PlantusMaximus/releases/tag/v0.0.2-1.16.4) - 12/17/2020
 
