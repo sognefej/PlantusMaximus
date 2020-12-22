@@ -7,6 +7,8 @@
   "text.autoconfig.plantusmaximus.option.general.invert": "Invert Key Binding Activation",
   "text.autoconfig.plantusmaximus.option.general.pullInventory": "Pull Items From Inventory",
   "text.autoconfig.plantusmaximus.option.general.headStart": "Delay farmland block decay (sec)",
+  "text.autoconfig.plantusmaximus.option.general.highlightPreview": "Highlight Preview",
+  "text.autoconfig.plantusmaximus.option.general.smoothPreviewLines": "Smooth Preview Lines",
 
 
   "text.autoconfig.plantusmaximus.category.seeds": "Seeds",
