@@ -7,7 +7,6 @@ Plant and till configurable areas to make life easier. Pairs well with [DiggusMa
 
 [See it on Modrinth!](https://modrinth.com/mod/plantusmaximus)
 
-**Currently in Beta!**
 
 ## What does it do? 
 It's meant to be used as a quality of life planting and farming mod. It allows the player to till a large plot of land, and place crops right away. 
