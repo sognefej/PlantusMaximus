@@ -10,6 +10,7 @@ Changes to be released
 - Latin Translation 
 - Add pull from inventory option [#14](https://github.com/sognefej/PlantusMaximus/issues/14) (New Feature!!!)
 - Add dealy to farmblock decay [#6](https://github.com/sognefej/PlantusMaximus/issues/6)
+- Add highlight preview [#13](https://github.com/sognefej/PlantusMaximus/issues/13)
 
 # [v0.0.2-1.16.4 (Beta)](https://github.com/sognefej/PlantusMaximus/releases/tag/v0.0.2-1.16.4) - 12/17/2020
 
