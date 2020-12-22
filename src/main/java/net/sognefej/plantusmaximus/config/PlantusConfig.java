@@ -17,6 +17,7 @@ import net.sognefej.plantusmaximus.PlantusMaximusMod;
 import net.sognefej.plantusmaximus.config.autoconfig.CustomGuiProviders;
 import net.sognefej.plantusmaximus.config.defaults.SeedDefaults;
 import net.sognefej.plantusmaximus.config.defaults.ToolDefaults;
+import net.sognefej.plantusmaximus.util.DataCache;
 
 
 @Config.Gui.Background("minecraft:textures/block/farmland.png")
@@ -56,6 +57,8 @@ public class PlantusConfig extends PartitioningSerializer.GlobalData {
                 data.seeds.allowedSeeds = seedDefaults.defaultSeeds;
             }
 
+            DataCache.plantusConfig = data;
+
             return ActionResult.SUCCESS;
         });
 
@@ -69,6 +72,8 @@ public class PlantusConfig extends PartitioningSerializer.GlobalData {
             }
 
             plantusServerConfig.createDefaultConfig();
+
+            DataCache.plantusConfig = data;
 
             return ActionResult.SUCCESS;
         });

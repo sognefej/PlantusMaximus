@@ -6,13 +6,12 @@ import net.minecraft.util.math.Direction;
 
 import net.sognefej.plantusmaximus.config.options.PlacementMode;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 
 public class BlockLayout {
-    public static Direction facing;
-    public static PlacementMode placementMode;
+    public static Direction facing = null;
+    public static PlacementMode placementMode = null;
 
     private static void addIfNotIn(List<BlockPos> blockPosList, BlockPos pos) {
         if (!blockPosList.contains(pos)) {
@@ -40,7 +39,7 @@ public class BlockLayout {
 
         if (current_radius <= radius) {
 
-            for(BlockPos p : getNeighbors(pos)) {
+            for (BlockPos p : getNeighbors(pos)) {
                 addIfNotIn(blockPosList, p);
             }
 
@@ -57,7 +56,7 @@ public class BlockLayout {
         if (current_width <= width) {
             blockPosList.add(pos.offset(facing));
 
-
+            if (placementMode == null) return;
             if (current_width % 2 == placementMode.ordinal()) {
                 expand(pos.offset(facing.rotateYClockwise(), current_width), current_width, width, blockPosList);
             } else {
@@ -66,17 +65,19 @@ public class BlockLayout {
         }
     }
 
-    public static List<BlockPos> getBlocksRadius(BlockPos pos, int radius) {
+    public static Set<BlockPos> getBlocksRadius(BlockPos pos, int radius) {
         List<BlockPos> blockPosList = new ArrayList<>();
-        BlockPos origin = pos;
 
         radiate(pos , 0, radius, blockPosList);
 
-        return blockPosList;
+        Set<BlockPos> blockPosSet = new HashSet<>(blockPosList);
+
+        return blockPosSet;
     }
 
-    public static List<BlockPos> getBlocksColumn(BlockPos pos, int length, int width) {
+    public static Set<BlockPos> getBlocksColumn(BlockPos pos, int length, int width) {
         List<BlockPos> blockPosList = new ArrayList<>();
+        if (facing == null) return Collections.emptySet();
         pos = pos.offset(facing.getOpposite());
 
         for (int i = 0; i < length; i++) {
@@ -85,6 +86,6 @@ public class BlockLayout {
             pos = pos.offset(facing);
         }
 
-        return blockPosList;
+        return new HashSet<>(blockPosList);
     }
 }

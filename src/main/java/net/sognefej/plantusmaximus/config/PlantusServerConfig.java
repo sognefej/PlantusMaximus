@@ -16,6 +16,7 @@ import java.io.IOException;
 
 
 public class PlantusServerConfig {
+    @SuppressWarnings("deprecation")
     private final File configFile = new File(FabricLoader.INSTANCE.getConfigDirectory().toString() + "/" + PlantusMaximusMod.MOD_ID + "/server.json5");
 
     public static class ServerConfig {

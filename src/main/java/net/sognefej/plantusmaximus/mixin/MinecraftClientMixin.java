@@ -7,14 +7,18 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
+import net.minecraft.client.network.ClientPlayerInteractionManager;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.sognefej.plantusmaximus.callback.PlanterCallback;
 
+import net.sognefej.plantusmaximus.planter.PlantPreview;
+import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -29,6 +33,10 @@ public abstract class MinecraftClientMixin {
     public ClientPlayerEntity player;
     @Shadow
     public HitResult crosshairTarget;
+
+    @Shadow private Thread thread;
+
+    @Shadow @Nullable public ClientPlayerInteractionManager interactionManager;
 
     @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/ClientPlayerInteractionManager;interactBlock(Lnet/minecraft/client/network/ClientPlayerEntity;Lnet/minecraft/client/world/ClientWorld;Lnet/minecraft/util/Hand;Lnet/minecraft/util/hit/BlockHitResult;)Lnet/minecraft/util/ActionResult;"), method = "doItemUse", cancellable = true)
     private void doPlant(CallbackInfo ci) {

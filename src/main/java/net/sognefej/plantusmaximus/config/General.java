@@ -28,4 +28,10 @@ public class General implements ConfigData {
     @ConfigEntry.BoundedDiscrete(min = 0, max = 60)
     @Comment("Head start before farmland turns back to dirt")
     public int headStart = 10;
+
+    @Comment("Enable highlight")
+    public boolean highlightPreview = true;
+
+    @Comment("Enable smooth lines")
+    public boolean smoothPreviewLines = false;
 }
