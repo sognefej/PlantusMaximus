@@ -1,9 +1,10 @@
-# Unreleased
-Changes to be released
+# [v1.0.0-1.16.4](https://github.com/sognefej/PlantusMaximus/releases/tag/v1.0.0-1.16.4) - 12/21/2020
+
+Firt full release!
 
 ## Fix
 - Issue where sound would not play when using mod [#4](https://github.com/sognefej/PlantusMaximus/issues/4)
-- Issue where gui entry for keybinding would not update [#11](https://github.com/sognefej/PlantusMaximus/issues/11)
+- Issue where GUI entry for keybinding would not update [#11](https://github.com/sognefej/PlantusMaximus/issues/11)
 
 ## Add
 - Turkish Translation 
