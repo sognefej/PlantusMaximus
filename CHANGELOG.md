@@ -8,7 +8,7 @@ Changes to be released
 ## Add
 - Turkish Translation 
 - Latin Translation 
-- Add pull from inventory option [#14](https://github.com/sognefej/PlantusMaximus/issues/14) (New Feature!!!)
+- Add pull from inventory option [#14](https://github.com/sognefej/PlantusMaximus/issues/14) 
 - Add dealy to farmblock decay [#6](https://github.com/sognefej/PlantusMaximus/issues/6)
 - Add highlight preview [#13](https://github.com/sognefej/PlantusMaximus/issues/13)
 
