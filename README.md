@@ -27,6 +27,7 @@ However, due to the way the mod works you can use it as a general block placemen
 - Change between radiate and column modes (configure tools and items separately) 
 - Highlight preview 
 - Delay farmblock decay 
+- Limit server block interactions 
 
 ## Configuring the mod
 All steps below apply to tools as well. 
