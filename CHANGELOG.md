@@ -1,3 +1,11 @@
+# Unreleased 
+
+## Fix
+- Issuse where placementMode was not passed over the network [#23](https://github.com/sognefej/PlantusMaximus/issues/23)
+
+## Update
+- Compiled with 1.16.5 [#21](https://github.com/sognefej/PlantusMaximus/issues/21)
+
 # [v1.0.0-1.16.4](https://github.com/sognefej/PlantusMaximus/releases/tag/v1.0.0-1.16.4) - 12/21/2020
 
 Firt full release!
