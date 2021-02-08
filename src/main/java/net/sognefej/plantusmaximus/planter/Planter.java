@@ -15,10 +15,8 @@ import net.minecraft.util.registry.Registry;
 import net.sognefej.plantusmaximus.PlantusMaximusMod;
 import net.sognefej.plantusmaximus.config.PlantusConfig;
 import net.sognefej.plantusmaximus.config.options.LayoutMode;
-import net.sognefej.plantusmaximus.config.options.PlacementMode;
 import net.sognefej.plantusmaximus.util.BlockLayout;
 
-import java.util.List;
 import java.util.Set;
 
 

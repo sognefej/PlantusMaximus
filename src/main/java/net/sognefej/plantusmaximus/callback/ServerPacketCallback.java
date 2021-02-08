@@ -19,6 +19,8 @@ import net.sognefej.plantusmaximus.config.options.LayoutMode;
 import net.sognefej.plantusmaximus.planter.Planter;
 import net.sognefej.plantusmaximus.util.GetTime;
 
+import java.util.Objects;
+
 
 public class ServerPacketCallback {
     private static final Identifier PLANTER_PACKET = new Identifier(PlantusMaximusMod.MOD_ID, "planter_packet");
@@ -33,16 +35,25 @@ public class ServerPacketCallback {
         buf.writeInt(width);
         buf.writeInt(radius);
         buf.writeBoolean(pullInventory);
-        MinecraftClient.getInstance().getNetworkHandler().getConnection().send(new CustomPayloadC2SPacket(PLANTER_PACKET, new PacketByteBuf(buf)));
+        try {
+            Objects.requireNonNull(MinecraftClient.getInstance().getNetworkHandler()).getConnection().send(new CustomPayloadC2SPacket(PLANTER_PACKET, new PacketByteBuf(buf)));
+        } catch (NullPointerException e) {
+           e.printStackTrace();
+        }
     }
 
     @Environment(EnvType.CLIENT)
     public static void sendTimerPacker(int headStart) {
         PacketByteBuf buf = new PacketByteBuf(Unpooled.buffer());
         buf.writeInt(headStart);
-        MinecraftClient.getInstance().getNetworkHandler().getConnection().send(new CustomPayloadC2SPacket(TIMER_PACKET, new PacketByteBuf(buf)));
+        try {
+            Objects.requireNonNull(MinecraftClient.getInstance().getNetworkHandler()).getConnection().send(new CustomPayloadC2SPacket(TIMER_PACKET, new PacketByteBuf(buf)));
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
     }
 
+    @SuppressWarnings("deprecation")
     public static void init() {
         ServerSidePacketRegistry.INSTANCE.register(PLANTER_PACKET, (packetContext, packetByteBuf) -> {
             BlockPos blockPos = packetByteBuf.readBlockPos();

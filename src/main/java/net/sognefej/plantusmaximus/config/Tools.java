@@ -4,8 +4,8 @@ package net.sognefej.plantusmaximus.config;
 import me.sargunvohra.mcmods.autoconfig1u.ConfigData;
 import me.sargunvohra.mcmods.autoconfig1u.annotation.Config;
 import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
-
 import me.sargunvohra.mcmods.autoconfig1u.shadowed.blue.endless.jankson.Comment;
+
 import net.sognefej.plantusmaximus.config.options.ColumnConfigBounds;
 import net.sognefej.plantusmaximus.config.options.LayoutMode;
 import net.sognefej.plantusmaximus.config.options.RadiusConfigBounds;
