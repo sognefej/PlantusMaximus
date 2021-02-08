@@ -1,6 +1,5 @@
 package net.sognefej.plantusmaximus.util;
 
-import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
 import net.sognefej.plantusmaximus.config.PlantusConfig;
 

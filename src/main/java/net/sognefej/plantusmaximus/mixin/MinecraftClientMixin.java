@@ -1,5 +1,6 @@
 package net.sognefej.plantusmaximus.mixin;
 
+
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 
@@ -14,11 +15,11 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
 
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
+
 import net.sognefej.plantusmaximus.callback.PlanterCallback;
 
-import net.sognefej.plantusmaximus.planter.PlantPreview;
 import org.jetbrains.annotations.Nullable;
+
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
