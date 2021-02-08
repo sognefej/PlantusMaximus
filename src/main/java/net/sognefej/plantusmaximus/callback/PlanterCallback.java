@@ -11,6 +11,7 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.sognefej.plantusmaximus.PlantusMaximusMod;
 import net.sognefej.plantusmaximus.config.PlantusConfig;
 import net.sognefej.plantusmaximus.config.options.LayoutMode;
+import net.sognefej.plantusmaximus.config.options.PlacementMode;
 import net.sognefej.plantusmaximus.planter.PlanterKeybinding;
 import net.sognefej.plantusmaximus.planter.PlantingPlayerEntity;
 
@@ -44,13 +45,14 @@ public class PlanterCallback {
                         case COLUMN:
                             int length = PlantusConfig.get().seeds.columnConfigBounds.length;
                             int width = PlantusConfig.get().seeds.columnConfigBounds.width;
+                            PlacementMode placementMode = PlantusConfig.get().seeds.columnConfigBounds.placementMode;
 
-                            ServerPacketCallback.sendPlanterPacket(hit_result.getBlockPos(), LayoutMode.COLUMN, length, width, 0, pullInventory);
+                            ServerPacketCallback.sendPlanterPacket(hit_result.getBlockPos(), LayoutMode.COLUMN, placementMode, length, width, 0, pullInventory);
                             break;
                         case RADIATE:
                             int radius = PlantusConfig.get().seeds.radiusConfigBounds.radius;
 
-                            ServerPacketCallback.sendPlanterPacket(hit_result.getBlockPos(), LayoutMode.RADIATE, 0, 0, radius, pullInventory);
+                            ServerPacketCallback.sendPlanterPacket(hit_result.getBlockPos(), LayoutMode.RADIATE, PlacementMode.LEFT_FIRST, 0, 0, radius, pullInventory);
                             break;
                         default:
                             System.err.println(PlantusMaximusMod.MOD_ID + ": unimplemented LayoutMode");
@@ -61,15 +63,16 @@ public class PlanterCallback {
                         case COLUMN:
                             int length = PlantusConfig.get().tools.columnConfigBounds.length;
                             int width = PlantusConfig.get().tools.columnConfigBounds.width;
+                            PlacementMode placementMode = PlantusConfig.get().tools.columnConfigBounds.placementMode;
 
                             ServerPacketCallback.sendTimerPacker(PlantusConfig.get().general.headStart);
-                            ServerPacketCallback.sendPlanterPacket(hit_result.getBlockPos(), LayoutMode.COLUMN, length, width, 0, pullInventory);
+                            ServerPacketCallback.sendPlanterPacket(hit_result.getBlockPos(), LayoutMode.COLUMN, placementMode, length, width, 0, pullInventory);
                             break;
                         case RADIATE:
                             int radius = PlantusConfig.get().tools.radiusConfigBounds.radius;
 
                             ServerPacketCallback.sendTimerPacker(PlantusConfig.get().general.headStart);
-                            ServerPacketCallback.sendPlanterPacket(hit_result.getBlockPos(), LayoutMode.RADIATE, 0, 0, radius, pullInventory);
+                            ServerPacketCallback.sendPlanterPacket(hit_result.getBlockPos(), LayoutMode.RADIATE, PlacementMode.LEFT_FIRST, 0, 0, radius, pullInventory);
                             break;
                         default:
                             System.err.println(PlantusMaximusMod.MOD_ID + ": unimplemented LayoutMode");

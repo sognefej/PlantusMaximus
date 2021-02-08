@@ -16,6 +16,7 @@ import io.netty.buffer.Unpooled;
 
 import net.sognefej.plantusmaximus.PlantusMaximusMod;
 import net.sognefej.plantusmaximus.config.options.LayoutMode;
+import net.sognefej.plantusmaximus.config.options.PlacementMode;
 import net.sognefej.plantusmaximus.planter.Planter;
 import net.sognefej.plantusmaximus.util.GetTime;
 
@@ -27,10 +28,11 @@ public class ServerPacketCallback {
     private static final Identifier TIMER_PACKET = new Identifier(PlantusMaximusMod.MOD_ID, "timer_packet");
 
     @Environment(EnvType.CLIENT)
-    public static void sendPlanterPacket(BlockPos blockPos, LayoutMode mode, int length, int width, int radius, boolean pullInventory) {
+    public static void sendPlanterPacket(BlockPos blockPos, LayoutMode layoutMode, PlacementMode placementMode, int length, int width, int radius, boolean pullInventory) {
         PacketByteBuf buf = new PacketByteBuf(Unpooled.buffer());
         buf.writeBlockPos(blockPos);
-        buf.writeEnumConstant(mode);
+        buf.writeEnumConstant(layoutMode);
+        buf.writeEnumConstant(placementMode);
         buf.writeInt(length);
         buf.writeInt(width);
         buf.writeInt(radius);
@@ -57,7 +59,8 @@ public class ServerPacketCallback {
     public static void init() {
         ServerSidePacketRegistry.INSTANCE.register(PLANTER_PACKET, (packetContext, packetByteBuf) -> {
             BlockPos blockPos = packetByteBuf.readBlockPos();
-            LayoutMode mode = packetByteBuf.readEnumConstant(LayoutMode.class);
+            LayoutMode layoutMode = packetByteBuf.readEnumConstant(LayoutMode.class);
+            PlacementMode placementMode = packetByteBuf.readEnumConstant(PlacementMode.class);
             int length = packetByteBuf.readInt();
             int width = packetByteBuf.readInt();
             int radius = packetByteBuf.readInt();
@@ -65,7 +68,7 @@ public class ServerPacketCallback {
 
             packetContext.getTaskQueue().execute(() -> {
                 ServerPlayerEntity player = (ServerPlayerEntity) packetContext.getPlayer();
-                Planter planter = new Planter(player, blockPos, mode, length, width, radius, pullInventory);
+                Planter planter = new Planter(player, blockPos, layoutMode, placementMode, length, width, radius, pullInventory);
                 planter.plant();
             });
         });

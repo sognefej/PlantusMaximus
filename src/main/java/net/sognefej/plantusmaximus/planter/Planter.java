@@ -15,6 +15,7 @@ import net.minecraft.util.registry.Registry;
 import net.sognefej.plantusmaximus.PlantusMaximusMod;
 import net.sognefej.plantusmaximus.config.PlantusConfig;
 import net.sognefej.plantusmaximus.config.options.LayoutMode;
+import net.sognefej.plantusmaximus.config.options.PlacementMode;
 import net.sognefej.plantusmaximus.util.BlockLayout;
 
 import java.util.Set;
@@ -32,7 +33,7 @@ public class Planter {
     private final ItemStack targetStack;
     private final boolean pullInventory;
 
-    public Planter(ServerPlayerEntity player, BlockPos pos, LayoutMode layoutMode, int length, int width, int radius, boolean pullInventory) {
+    public Planter(ServerPlayerEntity player, BlockPos pos, LayoutMode layoutMode, PlacementMode placementMode, int length, int width, int radius, boolean pullInventory) {
         this.interactionManager = player.interactionManager;
         this.player = player;
         this.world = player.getServerWorld();
@@ -45,8 +46,7 @@ public class Planter {
         this.radius = radius;
         this.pullInventory = pullInventory;
         BlockLayout.facing = player.getMovementDirection();
-        // Pass placement mode over the wire
-        BlockLayout.placementMode = PlantusConfig.get().tools.columnConfigBounds.placementMode;
+        BlockLayout.placementMode = placementMode;
     }
 
     public void plant() {
