@@ -1,4 +1,4 @@
-# Unreleased 
+# [v1.0.1-1.16.5](https://github.com/sognefej/PlantusMaximus/releases/edit/v1.0.1-1.16.5) - 2/7/2021
 
 ## Fix
 - Issue where placementMode was not passed over the network [#23](https://github.com/sognefej/PlantusMaximus/issues/23)
