@@ -10,7 +10,7 @@ Update to 1.16.5, Fix minor bug.
 
 # [v1.0.0-1.16.4](https://github.com/sognefej/PlantusMaximus/releases/tag/v1.0.0-1.16.4) - 12/21/2020
 
-Firt full release!
+First full release!
 
 ## Fix
 - Issue where sound would not play when using mod [#4](https://github.com/sognefej/PlantusMaximus/issues/4)
